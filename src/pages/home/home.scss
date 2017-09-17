@@ -1,0 +1,40 @@
+page-home {
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+    .flex-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        width: 100%;
+        margin-bottom: 10px;
+        box-shadow: 0 0 9px #333;
+        border-radius: 10px;
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+        font-size: 30px;
+        font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+        // letter-spacing: 0;
+        // text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+    }
+    .out {
+        background-color: #f34336;
+    }
+    .in {
+        background-color: #2195f2;
+    }
+    .report {
+        background-color: #9b27af;
+    }
+    .img {
+        height: 80px;
+        width: 80px;
+    }
+}

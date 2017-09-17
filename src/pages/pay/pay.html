@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="save()" [disabled]="!formModel.valid">保存</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="formModel" (submit)="submitException()">
+    <ion-list>
+      <ion-item>
+        <ion-label>日期</ion-label>
+        <ion-datetime type="datetime-local" displayFormat="YYYY/MM/DD" [(ngModel)]="date" formControlName="date"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="type === 'pay'">
+        <ion-label>支出类型:</ion-label>
+        <ion-select [(ngModel)]="category" formControlName="category">
+          <ion-option value="食物">食物</ion-option>
+          <ion-option value="交通">交通</ion-option>
+          <ion-option value="家用">家用</ion-option>
+          <ion-option value="学习">学习</ion-option>
+          <ion-option value="投资">投资</ion-option>
+          <ion-option value="衣服">衣服</ion-option>
+          <ion-option value="住宿">住宿</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="type === 'income'">
+        <ion-label>收入类型:</ion-label>
+        <ion-select [(ngModel)]="category" formControlName="category">
+          <ion-option value="工资">工资</ion-option>
+          <ion-option value="投资">投资</ion-option>
+          <ion-option value="程序开发">程序开发</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>金额</ion-label>
+        <ion-input type="number" placeholder="请输入金额" [(ngModel)]="amount" formControlName="amount"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>备注</ion-label>
+        <ion-input type="text" placeholder="请输入备注" [(ngModel)]="remark" formControlName="remark"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

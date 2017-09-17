@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="report()">报表</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>剩余资金：&#165;{{surplusAmount}}</ion-label>
+    </ion-item>
+    <ion-item-sliding *ngFor="let i of data">
+      <ion-item>
+        <!-- <div class="flex-container">
+          <div>{{i.date}}</div>
+          <div>{{i.type | sgType}}</div>
+          <div>{{i.category }}</div>
+          <div [class]="i.type === 'income' ? 'blue':'red'">&#165;{{i.amount}}</div>
+          <div>{{i.remark}}</div>
+        </div> -->
+        <table>
+          <tr>
+            <td class="td-25">{{i.date}}</td>
+            <td class="td-15">{{i.type | sgType}}</td>
+            <td class="td-15">{{i.category }}</td>
+            <td [class]="i.type === 'income' ? 'blue td-15':'red td-15'">&#165;{{i.amount}}</td>
+            <td class="td-30">
+              <div class="last-td">
+                {{i.remark}}
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!-- <ion-row no-wrap>
+          <ion-col col-4>{{i.date}}</ion-col>
+          <ion-col col-2>{{i.type | sgType}}</ion-col>
+          <ion-col col-2>{{i.category }}</ion-col>
+          <ion-col col-2 [class]="i.type === 'income' ? 'blue':'red'">&#165;{{i.amount}}</ion-col>
+          <ion-col col-2>{{i.remark}}</ion-col>
+        </ion-row> -->
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button icon-left color="danger" (click)="deleteRecord(i.id)"><ion-icon name="trash"></ion-icon>删除</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
