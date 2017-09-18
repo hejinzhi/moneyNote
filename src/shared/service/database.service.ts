@@ -38,7 +38,7 @@ export class DatabaseService {
 
 
     getAllData() {
-        return this.database.executeSql(`select * from my_money order by date desc;`, {}).then((data) => {
+        return this.database.executeSql(`select * from my_money order by date desc,id ;`, {}).then((data) => {
             let msgs = [];
             if (data.rows.length > 0) {
                 for (var i = 0; i < data.rows.length; i++) {

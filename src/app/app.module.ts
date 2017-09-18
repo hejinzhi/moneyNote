@@ -26,7 +26,7 @@ import { PayPage } from '../pages/pay/pay';
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
-      // mode: 'ios',
+      mode: 'ios',
       backButtonText: '返回',
       swipeBackEnabled: false
     }),
