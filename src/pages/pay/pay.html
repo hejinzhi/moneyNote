@@ -1,15 +1,11 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>{{title}}</ion-title>
     <ion-buttons end>
       <button ion-button (tap)="save()" [disabled]="!formModel.valid">保存</button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
   <form [formGroup]="formModel" (submit)="submitException()">
     <ion-list>
@@ -22,6 +18,7 @@
         <ion-select [(ngModel)]="category" formControlName="category">
           <ion-option value="食物">食物</ion-option>
           <ion-option value="交通">交通</ion-option>
+          <ion-option value="其他">其他</ion-option>
           <ion-option value="家用">家用</ion-option>
           <ion-option value="学习">学习</ion-option>
           <ion-option value="投资">投资</ion-option>
@@ -34,6 +31,7 @@
         <ion-select [(ngModel)]="category" formControlName="category">
           <ion-option value="工资">工资</ion-option>
           <ion-option value="投资">投资</ion-option>
+          <ion-option value="其他">其他</ion-option>
           <ion-option value="程序开发">程序开发</ion-option>
         </ion-select>
       </ion-item>
